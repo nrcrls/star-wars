@@ -1,13 +1,19 @@
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import Destination from './pages/Destination';
+import Spaceships from './pages/Spaceships';
 
 function App() {
   return (
-    <div className="App container text-accent">
-      <h1 className="title uppercase">Design System</h1>
-
-      <section id="colors">
-        <h1 className="text">Hello</h1>
-      </section>
-    </div >
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/destination" element={<Destination />} />
+        <Route path="/ships" element={<Spaceships />} />
+      </Routes>
+    </>
   );
 }
 
