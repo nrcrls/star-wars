@@ -1,13 +1,13 @@
-import { Route, Routes } from "react-router-dom";
-import Home from "./routes/Home";
 
 function App() {
   return (
-    <div className="App">
-      <Routes>
-        <Route path='/' element={<Home />} />
-      </Routes>
-    </div>
+    <div className="App container text-accent">
+      <h1 className="title uppercase">Design System</h1>
+
+      <section id="colors">
+        <h1 className="text">Hello</h1>
+      </section>
+    </div >
   );
 }
 

@@ -1,3 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Comfortaa&family=Cormorant+Upright&display=swap');
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
+
+:root {
+  /* colors */
+  --color-primary: 230 35% 7%;
+  --color-secondary: 0 0% 100%;
+  --color-accent: 231 77% 90%;
+  --color-secondary-accent: 44 100% 75%;
+
+  /* fonts */
+  --fs-900: 9.375rem;
+  --fs-800: 6.25rem;
+  --fs-700: 3.5rem;
+  --fs-600: 2rem;
+  --fs-500: 1.75rem;
+  --fs-400: 1.125rem;
+  --fs-300: 1rem;
+  --fs-200: 0.875rem;
+
+  /* font-families */
+  --ff-serif: 'Cormorant Upright', serif;
+  --ff-sans: "Barlow Condensed", sans-serif;
+  --ff-cursive: 'Comfortaa', cursive;
+
+}
+
+
 /******************/
 /*      Reset     */
 /******************/
@@ -23,11 +53,25 @@ picture {
   margin: 0;
 }
 
+/* Make sure fonts are not bold by default */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: 400;
+}
+
 /* Set core body defaults */
 body {
   min-height: 100vh;
-  text-rendering: optimizeSpeed;
   line-height: 1.5;
+  color: hsl(var(--color-secondary));
+  background-color: hsl(var(--color-primary));
+  font-family: var(--ff-cursive);
+  font-size: var(--fs-400);
 }
 
 /* Make images easier to work with */
@@ -43,16 +87,6 @@ button,
 textarea,
 select {
   font: inherit;
-}
-
-ul {
-  list-style: none;
-}
-
-h1,
-p,
-li {
-  color: white
 }
 
 /* remove animations for people who've turned them off */
@@ -100,4 +134,114 @@ li {
   white-space: nowrap;
   /* added line */
   border: 0;
+}
+
+
+/* colors */
+
+.bg-dark {
+  background-color: hsl(var(--color-primary));
+}
+
+.bg-light {
+  background-color: hsl(var(--color-secondary));
+}
+
+.bg-accent {
+  background-color: hsl(var(--color-accent));
+}
+
+.bg-secondary-accent {
+  background-color: hsl(var(--color-secondary-accent));
+}
+
+.text-dark {
+  color: hsl(var(--color-primary));
+}
+
+.text-light {
+  color: hsl(var(--color-secondary));
+}
+
+.text-accent {
+  color: hsl(var(--color-accent));
+}
+
+.text-secondary-accent {
+  color: hsl(var(--color-secondary-accent));
+}
+
+/* font-styles */
+
+.ff-serif {
+  font-family: var(--ff-serif);
+}
+
+.ff-sans {
+  font-family: var(--ff-sans);
+}
+
+.ff-cursive {
+  font-family: var(--ff-cursive);
+}
+
+/* font-sizes */
+
+.fs-900 {
+  font-size: var(--fs-900);
+}
+
+.fs-800 {
+  font-size: var(--fs-800);
+}
+
+.fs-700 {
+  font-size: var(--fs-700);
+}
+
+.fs-600 {
+  font-size: var(--fs-600);
+}
+
+.fs-500 {
+  font-size: var(--fs-500);
+}
+
+.fs-400 {
+  font-size: var(--fs-400);
+}
+
+.fs-300 {
+  font-size: var(--fs-300);
+}
+
+.fs-200 {
+  font-size: var(--fs-200);
+}
+
+/*letter-spacing*/
+
+.letter-spacing-1 {
+  letter-spacing: 4.75px;
+}
+
+.letter-spacing-2 {
+  letter-spacing: 2.7px;
+}
+
+.letter-spacing-3 {
+  letter-spacing: 2.35px;
+}
+
+/*other typography*/
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+  line-height: 1.1;
 }
