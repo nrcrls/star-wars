@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Comfortaa&family=Cormorant+Upright&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&family=Comfortaa&display=swap');
 /* ------------------- */
 /* Custom properties   */
 /* ------------------- */
@@ -21,10 +21,9 @@
   --fs-200: 0.875rem;
 
   /* font-families */
-  --ff-serif: 'Cormorant Upright', serif;
+  --ff-serif: 'Bellefair', serif;
   --ff-sans: "Barlow Condensed", sans-serif;
   --ff-cursive: 'Comfortaa', cursive;
-
 }
 
 

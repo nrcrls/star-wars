@@ -1,13 +1,6 @@
 function DesignSystem() {
   return (<>
-    <h1 className="title uppercase">Design System</h1>
 
-    <section id="colors">
-      <h1 className="text">Hello</h1>
-    </section>
-    <div>
-      <button className="btn-large text-dark uppercase ff-serif fs-600 letter-spacing-3">Explore</button>
-    </div>
 
 
 
