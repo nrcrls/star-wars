@@ -419,3 +419,8 @@ body {
     background-image: url(./assets/background-home-desktop.jpg);
   }
 }
+
+.hamburger-menu {
+  background-color: transparent;
+  border: none;
+}
