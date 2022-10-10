@@ -1,6 +1,6 @@
 function Home() {
   return (
-    <div className="grid-container">
+    <div className="grid-container grid-container--home">
 
       <div>
         <h1 className="ff-serif uppercase text-light fs-800 letter-spacing-1">Discover Space</h1>
