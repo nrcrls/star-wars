@@ -1,41 +1,53 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from '../assets/logo.png';
-import { HiMenu } from 'react-icons/hi';
-import { MdClose } from "react-icons/md"
+import { MdClose } from "react-icons/md";
+import { FiMenu } from "react-icons/fi";
 import { useState } from 'react';
+import { SidebarData } from './SidebarData';
 
 function Navbar() {
-  const [hamburgerMenu, setHamburgerMenu] = useState(false)
+  const [sidebar, setSidebar] = useState(false)
 
   function handleToggle() {
-    setHamburgerMenu(prev => !prev);
+    setSidebar(prev => !prev)
   }
 
-  function closeMenu() {
-    setHamburgerMenu(false);
+  const closeMenu = () => {
+    setSidebar(false)
   }
-
 
   return (
-    <header className='flex'>
+    <header className='flex-space-btwn'>
       <div>
-        <Link to="/"><img src={logo} alt="logo" className="logo" /></Link>
+        <NavLink to="/"><img src={logo} alt="logo" className="logo" /></NavLink>
       </div>
-      <button onClick={handleToggle} className='hamburger-open text-accent fs-700'>{hamburgerMenu ? <MdClose className='hamburger--close' /> : <HiMenu className='hamburger--open' />}</button>
-      <nav>
-        <ul className={`primary-navigation flex  ${hamburgerMenu ? " showMenu" : ""}`}>
-          <li className="active underline-indicator">
-            <Link to="/" activeClassName="active-link" onClick={() => closeMenu()} className='text-light uppercase ff-sans letter-spacing-2'>Home</Link>
-          </li>
-          <li className="underline-indicator">
-            <Link to="/destination" className='text-light uppercase ff-sans letter-spacing-2'>Destination</Link>
-          </li>
-          <li className="underline-indicator">
-            <Link to="/ships" className='text-light uppercase ff-sans letter-spacing-2'>Our Spaceships</Link>
-          </li>
+
+      <nav className='flex'>
+        <button className="mobile-nav-toggle" onClick={handleToggle}>
+          {sidebar ?
+            (
+              <MdClose style={{ color: "#fff", width: "40px", height: "40px" }} />
+            ) : (
+              <FiMenu style={{ color: "#fff", width: "40px", height: "40px" }} />
+            )
+          }
+        </button>
+        <ul onClick={handleToggle} className={`list-style flex ${sidebar ? "primary-navigation" : "primary-navigation active"}`}>
+          {SidebarData.map((item, index) => {
+            return (
+              <li key={index} className={item.cName}>
+                <NavLink activeClassName="active-link"
+                  onClick={() => closeMenu()}
+                  exactto={item.path} className={item.navLinkcName}>
+                  {item.title}
+                </NavLink>
+              </li>
+            )
+          })}
         </ul>
       </nav>
-    </header>
+
+    </header >
   );
 }
 

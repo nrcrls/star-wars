@@ -94,6 +94,7 @@ body {
   font-size: var(--fs-400);
   display: grid;
   grid-template-rows: min-content 1fr;
+  overflow-x: hidden;
 }
 
 /* Make images easier to work with */
@@ -127,10 +128,19 @@ select {
 /*****************************/
 /*      Utility classes     */
 /*****************************/
+.list-style {
+  list-style: none;
+}
 
 .flex {
   display: flex;
   gap: var(--gap, 1rem);
+}
+
+.flex-space-btwn {
+  display: flex;
+  gap: var(--gap, 1rem);
+  justify-content: space-between;
 }
 
 .grid {
@@ -342,12 +352,27 @@ select {
 
 .primary-navigation {
   --underline-gap: 2rem;
-  list-style: none;
   padding: 2rem;
   margin: 0;
   text-decoration: none;
-  background: hsl(var(--color-secondary) / .05);
-  backdrop-filter: blur(1.5rem);
+  background: hsl(var(--color-primary) / .95);
+}
+
+.mobile-nav-toggle {
+  display: none;
+}
+
+.primary-navigation.active {
+  width: 100%;
+}
+
+/*if browser supports it will add glassmorphism effect*/
+
+@supports (backdrop-filter: blur(1.5rem)) {
+  .primary-navigation {
+    background: hsl(var(--clr-dark) / .05);
+    backdrop-filter: blur(1.5rem);
+  }
 }
 
 .primary-navigation a {
@@ -360,23 +385,28 @@ select {
     position: fixed;
     z-index: 1000;
     inset: 0 0 0 30%;
-    background: hsl(var(--color-secondary) / .05);
-    backdrop-filter: blur(1.5rem);
     list-style: none;
     padding: min(6rem, 20vh) 2rem;
     margin: 0;
     flex-direction: column;
-    text-decoration: none;
+    transform: translateX(100%);
   }
 
-  .primary-navigation.underline-indicator>.active {
-    border: 0;
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    z-index: 2000;
+    right: 1rem;
+    top: 2rem;
+    background-color: transparent;
+    border: none;
   }
+
 }
 
 .underline-indicator>* {
   padding: var(--underline-gap, 1rem) 0;
-  margin: 4rem;
+  margin: 3rem;
   border: 0;
   border-bottom: .2rem solid hsl(var(--color-secondary) / 0);
   cursor: pointer;
