@@ -356,14 +356,12 @@ select {
   margin: 0;
   text-decoration: none;
   background: hsl(var(--color-primary) / .95);
+  list-style: none;
+
 }
 
 .mobile-nav-toggle {
   display: none;
-}
-
-.primary-navigation.active {
-  width: 100%;
 }
 
 /*if browser supports it will add glassmorphism effect*/
@@ -392,6 +390,10 @@ select {
     transform: translateX(100%);
   }
 
+  .primary-navigation.showMenu {
+    transform: translateX(0);
+  }
+
   .mobile-nav-toggle {
     display: block;
     position: absolute;
@@ -400,6 +402,7 @@ select {
     top: 2rem;
     background-color: transparent;
     border: none;
+    margin: 0;
   }
 
 }
@@ -454,13 +457,13 @@ body {
   background-image: url(./assets/background-home-mobile.jpg);
 }
 
-@media (min-width: 35em) {
+@media (min-width: 35rem) {
   .home {
     background-image: url(./assets/background-home-tablet.jpg);
   }
 }
 
-@media (min-width: 45em) {
+@media (min-width: 45rem) {
   .home {
     background-image: url(./assets/background-home-desktop.jpg);
   }

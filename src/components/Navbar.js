@@ -32,13 +32,13 @@ function Navbar() {
             )
           }
         </button>
-        <ul onClick={handleToggle} className={`list-style flex ${sidebar ? "primary-navigation" : "primary-navigation active"}`}>
+        <ul onClick={handleToggle} className={`primary-navigation list-style flex ${sidebar ? "showMenu" : ""}`}>
           {SidebarData.map((item, index) => {
             return (
               <li key={index} className={item.cName}>
                 <NavLink activeClassName="active-link"
                   onClick={() => closeMenu()}
-                  exactto={item.path} className={item.navLinkcName}>
+                  exact to={item.path} className={item.navLinkcName}>
                   {item.title}
                 </NavLink>
               </li>
